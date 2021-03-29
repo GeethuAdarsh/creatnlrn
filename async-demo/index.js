@@ -4,7 +4,7 @@ console.log("After");
 
 function getRepositories(user){
     console.log("User",user);
-    getRepositories(user.gitHubUsername,getCommits);
+    getRepositories(user.gitHubUsername , getCommits);
 }
 
 function getCommits(repos){
@@ -16,9 +16,9 @@ function displayCommits(commits){
     console.log(commits)
 }
 
-function displayRepositories(repos){
-    console.log(repos);
-}
+// function displayRepositories(repos){
+//     console.log(repos);
+// }
 
 function getUser(id, callback){
     setTimeout(()=>{
@@ -29,7 +29,14 @@ function getUser(id, callback){
 
 function getRepositories(user,callback){
     setTimeout(()=>{
-        console.log("Repositories...")
+        console.log("Repositories...");
         callback(['repo1','repo2','repo3'])
     },2000)
+}
+
+function getCommits(commits,callback){
+            setTimeout(()=>{
+                console.log("commits...")
+                callback(["commit"])
+            },2000)
 }
